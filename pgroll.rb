@@ -5,21 +5,21 @@
 class Pgroll < Formula
   desc "Postgres zero-downtime migrations made easy"
   homepage "https://www.xata.io"
-  version "0.4.1"
+  version "0.4.1-docker.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/xataio/pgroll/releases/download/v0.4.1/pgroll.macos.arm64"
-      sha256 "d32be67e30adb3fd375b9dace836236132c2318e500976a22c276159b5cbead0"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.macos.arm64"
+      sha256 "1311d0f71c1ccd251bdc9dab92ee536406bee4e90698070e333e7916d5540549"
 
       def install
         bin.install "pgroll.macos.arm64" => "pgroll"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/xataio/pgroll/releases/download/v0.4.1/pgroll.macos.amd64"
-      sha256 "b54c6cef269ae48341c4606a0f234214d6cc2faa9e6deeb9465904f08dbdd151"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.macos.amd64"
+      sha256 "8382a7ac403125fd2758f7d6eb8591b154f68d4330c84d0a63a805b9fa8fc1cb"
 
       def install
         bin.install "pgroll.macos.amd64" => "pgroll"
@@ -29,16 +29,16 @@ class Pgroll < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/xataio/pgroll/releases/download/v0.4.1/pgroll.linux.amd64"
-      sha256 "0fe7450203765812eff1e5066a9e29b33765d8e16e2f02326bdd301ca270239c"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.linux.amd64"
+      sha256 "fcf0ddfd354e671c1a9e9a7e9b2fab72e1d90e382994d8e4fc20cb611063c791"
 
       def install
         bin.install "pgroll.linux.amd64" => "pgroll"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xataio/pgroll/releases/download/v0.4.1/pgroll.linux.arm64"
-      sha256 "2de02b15cff795ba244e04f6b426de69f1edea2ed8f7d5095b47d571a001bf69"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.linux.arm64"
+      sha256 "38fd4115b5fb3953b6cf156df2bc33bb622ae43854ac28bd0de4349f3869ade0"
 
       def install
         bin.install "pgroll.linux.arm64" => "pgroll"
