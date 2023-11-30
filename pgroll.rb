@@ -5,43 +5,43 @@
 class Pgroll < Formula
   desc "Postgres zero-downtime migrations made easy"
   homepage "https://www.xata.io"
-  version "0.4.1-docker.2"
+  version "0.4.1-docker.3"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.macos.arm64"
-      sha256 "1311d0f71c1ccd251bdc9dab92ee536406bee4e90698070e333e7916d5540549"
-
-      def install
-        bin.install "pgroll.macos.arm64" => "pgroll"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.macos.amd64"
-      sha256 "8382a7ac403125fd2758f7d6eb8591b154f68d4330c84d0a63a805b9fa8fc1cb"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.3/pgroll.macos.amd64"
+      sha256 "59c27c349bca4fe147a82add4624294c156c03047dafee53bf0ab9399cd4a2ac"
 
       def install
         bin.install "pgroll.macos.amd64" => "pgroll"
       end
     end
+    if Hardware::CPU.arm?
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.3/pgroll.macos.arm64"
+      sha256 "0ee903c99481195c579f6e8482923491fac7bd0e3337ec55ecc4e06f9cf41520"
+
+      def install
+        bin.install "pgroll.macos.arm64" => "pgroll"
+      end
+    end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.linux.amd64"
-      sha256 "fcf0ddfd354e671c1a9e9a7e9b2fab72e1d90e382994d8e4fc20cb611063c791"
-
-      def install
-        bin.install "pgroll.linux.amd64" => "pgroll"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.2/pgroll.linux.arm64"
-      sha256 "38fd4115b5fb3953b6cf156df2bc33bb622ae43854ac28bd0de4349f3869ade0"
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.3/pgroll.linux.arm64"
+      sha256 "95f33cb1916b4b395d5b7019dffa5c7c5052b215d05089bfff8998c868bb559d"
 
       def install
         bin.install "pgroll.linux.arm64" => "pgroll"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/xiaoyao9184/pgroll/releases/download/v0.4.1-docker.3/pgroll.linux.amd64"
+      sha256 "dbd04a413d0e996da0f92ed8f64af0d205c94bb29babc9937c317b54fb987574"
+
+      def install
+        bin.install "pgroll.linux.amd64" => "pgroll"
       end
     end
   end
